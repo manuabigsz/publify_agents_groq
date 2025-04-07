@@ -4,7 +4,7 @@ import warnings
 
 from datetime import datetime
 
-from novo_back.crew import NovoBack
+from .crew import NovoBack
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -13,54 +13,19 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
-def run():
+def run(topic, content, social_network):
     """
-    Run the crew.
+    Run the crew with a topic and specific content.
     """
     inputs = {
-        'topic': 'AI LLMs',
+        'topic': topic,
+        'content': content,
+        'social_network': social_network,
         'current_year': str(datetime.now().year)
     }
     
     try:
-        NovoBack().crew().kickoff(inputs=inputs)
+        result = NovoBack().crew().kickoff(inputs=inputs)
+        return result  # agora retorna o conteúdo gerado
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
-
-
-def train():
-    """
-    Train the crew for a given number of iterations.
-    """
-    inputs = {
-        "topic": "AI LLMs"
-    }
-    try:
-        NovoBack().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
-
-    except Exception as e:
-        raise Exception(f"An error occurred while training the crew: {e}")
-
-def replay():
-    """
-    Replay the crew execution from a specific task.
-    """
-    try:
-        NovoBack().crew().replay(task_id=sys.argv[1])
-
-    except Exception as e:
-        raise Exception(f"An error occurred while replaying the crew: {e}")
-
-def test():
-    """
-    Test the crew execution and returns the results.
-    """
-    inputs = {
-        "topic": "AI LLMs",
-        "current_year": str(datetime.now().year)
-    }
-    try:
-        NovoBack().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
-
-    except Exception as e:
-        raise Exception(f"An error occurred while testing the crew: {e}")
