@@ -1,0 +1,23 @@
+[project]
+name = "novo_back"
+version = "0.1.0"
+description = "novo_back using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.108.0,<1.0.0"
+]
+
+[project.scripts]
+novo_back = "novo_back.main:run"
+run_crew = "novo_back.main:run"
+train = "novo_back.main:train"
+replay = "novo_back.main:replay"
+test = "novo_back.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
