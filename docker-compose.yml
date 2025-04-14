@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  publify-api:
+  groq-api:
     build: .
     image: manuossz/tcc-gemini-api
-    container_name: publify-api
+    container_name: groq-api
     ports:
       - "8000:8000"
     environment:

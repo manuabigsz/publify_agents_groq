@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from src.publify_api.main import run
+from src.novo_back.main import run
 
 app = FastAPI()
 
