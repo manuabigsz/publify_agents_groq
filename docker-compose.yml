@@ -3,7 +3,7 @@ version: '3'
 services:
   groq-api:
     build: .
-    image: manuossz/tcc-gemini-api
+    image: manuossz/tcc-groq-api
     container_name: groq-api
     ports:
       - "8000:8000"
