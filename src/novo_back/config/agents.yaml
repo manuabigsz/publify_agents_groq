@@ -27,6 +27,6 @@ reporting_analyst:
     - Adaptação de conteúdo para {social_network}
     - Criação de chamadas à ação envolventes
   constraints:
-    - Mantenha o texto no tamanho ideal para {social_network} ({text_lenght})
+    - Mantenha o texto no tamanho ideal para {social_network} ({text_length})
     - Use linguagem natural e acessível ao público ({target_public})
     - Inclua elementos que incentivem interação, como perguntas ou emojis

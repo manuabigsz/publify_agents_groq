@@ -1,6 +1,7 @@
 FROM python:3.11-slim
 
-COPY . .
+COPY . .  
+COPY .env .env 
 
 RUN pip install --upgrade pip \
  && pip install -r requirements.txt \

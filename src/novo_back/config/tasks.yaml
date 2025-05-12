@@ -1,35 +1,42 @@
 research_task:
   description: >
-    Explore de forma curiosa e aberta o universo de {content} dentro de {topic}. 
-    Vá além dos dados: busque histórias reais, curiosidades inesperadas e vozes autênticas que estão moldando esse tema. 
-    Priorize fontes que tragam perspectivas humanas e experiências diretas. 
-    Reflita como isso poderia inspirar ou emocionar o público ({target_public}) em {social_network}, mantendo um tom {tone} que gere conexão genuína.
-    O texto resultante deve ter um tamanho {text_length}, adequado para sustentar o interesse do público e criar uma experiência envolvente.
+    Investigue com curiosidade genuína e mente aberta o universo de {content} dentro do tema mais amplo de {topic}.
+    Vá além dos dados objetivos: busque histórias de vida, experiências marcantes e pontos de vista de quem realmente vive ou transforma esse assunto no dia a dia.
+    Dê preferência a fontes que tragam experiências diretas, reflexões pessoais e contextos reais que ajudem o público ({target_public}) a se sentir próximo do tema.
+    Reflita como esse conteúdo pode emocionar, inspirar ou provocar uma conversa verdadeira em {social_network}, mantendo um tom {tone}, com espaço para nuance e empatia.
+    O texto final deve ter um tamanho {text_length}, suficiente para manter o interesse do público e criar uma experiência envolvente do começo ao fim.
+
   agent: researcher
+
   expected_output: >
-    Um texto envolvente com os principais destaques sobre {content} em {topic}, 
-    que combine descobertas recentes com histórias inspiradoras ou surpreendentes. 
-    Sempre que possível, inclua trechos de falas, experiências ou casos reais que tragam calor humano. 
-    O conteúdo deve ser informal na medida certa, como se preparasse o terreno para uma conversa instigante em {social_network}, 
-    já adaptado ao tom {tone}, ao estilo do público ({target_public}) e ao tamanho {text_length} especificado.
+    Um texto com personalidade e ritmo, reunindo os principais destaques sobre {content} dentro de {topic}.
+    Sempre que possível, inclua relatos reais, falas de pessoas envolvidas ou situações que revelem o lado humano do tema.
+    Combine descobertas relevantes com histórias surpreendentes ou inspiradoras que conectem o público a esse universo.
+    O conteúdo deve ter o tom adequado ao público ({target_public}) e à rede {social_network}, e respeitar o tamanho {text_length} como parâmetro para profundidade, sem perder a fluidez de uma boa conversa.
 
 reporting_task:
   description: >
-    Com base nos insights coletados, crie uma publicação para {social_network} que pareça escrita por uma pessoa apaixonada pelo tema. 
-    Escreva como se estivesse contando algo empolgante para um amigo: use uma voz autêntica, próxima e com emoção. 
-    Traga o {content} no contexto de {topic} de forma humana, acessível e com toques pessoais. 
-    Use storytelling natural, emojis com propósito, perguntas que convidem à conversa e uma sugestão de imagem que complemente a energia da publicação. 
-    Dê preferência a frases curtas, gírias leves (se compatível com o público), variações de ritmo e respeite o tamanho {text_length} definido na etapa anterior.
+    A partir dos insights trazidos na etapa anterior, transforme o conteúdo em uma publicação que pareça escrita por alguém apaixonado pelo tema, contando algo interessante para quem realmente quer ouvir.
+    Use uma voz autêntica, acessível e envolvente — como numa boa conversa entre amigos.
+    Traga o conteúdo de {content} no contexto de {topic} de forma leve, mas significativa, com histórias que tenham cara de vida real, observações sensíveis e perguntas que abram espaço para o diálogo.
+    Adapte o tom para {social_network} e para o público ({target_public}), sempre respeitando o ritmo, a profundidade e o tamanho {text_length} definidos.
+
+    ➤ Estrutura de tamanho com base em {text_length}:
+      - "curto": até **3 parágrafos curtos** (máx. 450 palavras), focando em um recorte direto, com tom leve, ágil e conversacional.
+      - "médio": até **5 parágrafos** (máx. 700 palavras), permitindo contexto e nuance, mas sem se alongar demais.
+      - "longo": até **7 parágrafos** (máx. 1000 palavras), com espaço para contar histórias com mais profundidade, mantendo sempre fluidez e conexão emocional.
+
+    ➤ A linguagem deve ser **100% humanizada**, como se fosse escrita por uma pessoa real em primeira ou terceira pessoa, com observações naturais, perguntas sinceras e sem jargões desnecessários.
+
   agent: reporting_analyst
+
   expected_output: >
     Um arquivo Markdown (.md) com a seguinte estrutura:
 
     # Publicação para {social_network}  
-    {texto fluido e empático, com chamadas à ação que parecem espontâneas}  
+    {Texto empático e envolvente, com tamanho adequado ao parâmetro {text_length}, tom {tone}, e voltado para {target_public}. O conteúdo deve soar como algo que alguém de verdade escreveria — sem clichês, sem rigidez, e com espaço para pausa, reflexão ou troca. Pode incluir perguntas abertas, reflexões pessoais ou curiosidades que puxem conversa.}
 
     ---
 
     **🖼️ Descrição da Imagem:**  
-    {descrição sensorial que complemente o conteúdo e ajude a imaginar o cenário do post}
-
-  dependencies: [research_task]
+    {Descrição sensorial e imaginativa, que ajude o leitor a visualizar o ambiente, o clima ou o tom emocional do post. Deve complementar e ampliar a experiência do conteúdo principal.}

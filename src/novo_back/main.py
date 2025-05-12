@@ -8,7 +8,7 @@ from .crew import NovoBack
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
-def run(topic, content, social_network, text_lenght, target_public, tone):
+def run(topic, content, social_network, text_length, target_public, tone):
     """
     Run the crew with a topic and specific content.
     """
@@ -16,7 +16,7 @@ def run(topic, content, social_network, text_lenght, target_public, tone):
         'topic': topic,
         'content': content,
         'social_network': social_network,
-        'text_lenght': text_lenght,
+        'text_length': text_length,
         'target_public': target_public,
         'tone': tone, 
         'current_year': str(datetime.now().year)
